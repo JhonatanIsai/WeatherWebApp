@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Simple Weather</title>
+
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/logo.png">
+    <link rel="stylesheet" href="weather.css">
+
+    <title><a href="./index.html">My Weather</a></title>
+
+</head>
+
+
+<body>
+    
+        <div alt="navigation" class="navbar" id="top">
+            <!--....................Logo............................-->
+            <div role = "banner" aria-label="White cloud logo" >  
+                <a href="./index.html" aria-label="Link to home page"><img src="./images/logo.png" class="logo"></a>
+                <h1>Simple Weather</h1>
+
+               
+            </div>
+    
+    
+            <!--....................Menu ............................-->
+            <nav class="dropdown">
+                <input type="image" onclick="myFunction()" class="dropbtn">Dropdown</input>
+
+                <div id="myDropdown" class="dropdown-content">
+                    <input type="text" placeholder="Zip-Code" id="myInput" onkeyup="filterFunction()" onkeydown="checkZip()" role="search" aria-label="Enter zip-Code">
+                    <a href="./logIn.html"><p>My profile</p></a>
+                    <a href="./signUp.html"><p>Sign up</p></a>
+                </div>
+            </nav>
+        </div>      
+ <!--...........................Main Weather............................-->
+            
+    <main>
+        <div class="container" role="main">
+            <div id="today" role="section" tabindex="1" aria-label="Today's Weather"> 
+    
+                <div aria-label="Todays date"> <p id="Date"  tabindex="2">Today Date</p> </div>
+                <p id="Description" aria-label="Weather description" tabindex="2">Description</p>
+                <p id="Location" aria-label="Current location" tabindex="2">Location</p>
+                <P id="Temp" aria-label="Current temperature" tabindex="2">Temp</P>
+                <img id="wicon">
+            </div>
+ <!--....................Icon Grid............................-->>
+            
+            <div  id="iconGrid" role="grid" tabindex="3" aria-label="Weather information pannel">
+
+                <div class="infoIcon" role="gridcell" tabindex="4">
+                    <img class="socialMedia" src="./images/lowTemp.png" aria-label="Highest temperature today"> <p id="lowTemp">Low Temp</p>
+                </div>
+        
+                <div class="infoIcon" role="gridcell"  tabindex="4">
+                    <img class="socialMedia" src="./images/highTemp.png" aria-label="Lowest temperature today"> <p id="highTemp">High Temp</p>
+                </div>
+        
+                <div class="infoIcon" role="gridcell" tabindex="4">
+                    <img class="socialMedia" src="./images/wind.png" aria-label="Wind Speed"> <p id="wind">Wind Speed MPH</p>
+                </div>
+        
+                <div class="infoIcon" role="gridcell" tabindex="4">
+                    <img class="socialMedia" src="./images/local.png" aria-label="Get local weather"><p id="local"> Local Weather</p>
+                </div>
+        
+                <div class="infoIcon" role="gridcell" tabindex="4">
+                    <img class="socialMedia" src="./images/humidity.png" aria-label="Humidity"><p id="humidity">Humidity %</p>
+                </div>
+        
+                <div class="infoIcon" role="gridcell" tabindex="4"> 
+                    <img class="socialMedia" src="./images/feelsLike.png" aria-label="Weather feels like" ><p id="feelsLike">FeelsLike</p> 
+                </div>
+        
+                <div class="infoIcon" role="gridcell" tabindex="4"> 
+                    <img class="socialMedia" src="./images/visibility.png" aria-label="Visibility"><p id="visibility">Visibility</p>
+                </div>
+        
+                <div class="infoIcon" role="gridcell" tabindex="4"> 
+                    <img class="socialMedia" src="./images/sunRise.png" aria-label="Time of sunrise"><p id="sunRise">Sunrise</p>
+                </div>
+        
+                <div class="infoIcon" role="gridcell" tabindex="4">
+                    <img class="socialMedia" src="./images/sunSet.png" aria-label="Time of sunset"> <p id="sunSet">Sunset</p>
+                </div>
+            </div>
+        </div>
+ <!--....................Social Media............................-->>
+            
+
+    </main>
+    <div aria-label="Social media">
+        <a href="http://www.facebook.com" role="button"><img src="./images/Facebook.png" class="socialMedia" aria-label="Facebook button"></a>
+        <a href="http://www.instagram.com" role="button"><img src="./images/Instagram.png" class="socialMedia" aria-label="Instagram button"></a>
+        <a href="http://www.linkedin.com" role="button"><img src="./images/LinkedIn.png" class="socialMedia" aria-label="Linked in utton"></a> 
+        <a href="http://www.snapchat.com" role="button"><img src="./images/Snapchat.png" class="socialMedia" aria-label="Snapchat button"></a>
+        <a href="http://www.twitter.com" role="button"><img src="./images/Twitter.png" class="socialMedia" aria-label="Twitter button"></a> 
+    </div>
+    
+
+
+
+
+
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+
+</html>
