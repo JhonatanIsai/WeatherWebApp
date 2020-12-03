@@ -1,3 +1,5 @@
+//Jhonatan Medina 
+//Weather web app 1.0
 
 // API KEY 
 var key = 'f5a76bcde0f4fed7682b28cd60f2f9b1';
