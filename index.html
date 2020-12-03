@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Simple Weather</title>
+<title>My Weather</title>
 
 <head>
     <meta charset="UTF-8"> 
@@ -8,22 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="./images/logo.png">
     <link rel="stylesheet" href="weather.css">
- 
     <title><a href="./index.html">My Weather</a></title>
-
 </head>
-
-
 <body>
-    
-        <div alt="navigation" class="navbar" id="top">
+        <div alt="header" class="navbar" id="top">
             <!--....................Logo............................-->
-            <div role = "banner" aria-label="White cloud logo" id="cloudBlock"> 
+            <div role = "link" aria-label="White cloud logo" id="cloudBlock"> 
 
                 <a href="./index.html" aria-label="Link to home page">
                     <img src="./images/logo.png" class="logo">
                 </a>
-                <h1>MyWeather</h1>
+                <h1 aria-label="White cloud logo">MyWeather</h1>
             </div> 
 
             <!--....................Menu ............................-->
@@ -71,8 +66,8 @@
                     <img class="socialMedia" src="./images/wind.png" aria-label="Wind Speed"> <p id="wind">Wind Speed MPH</p>
                 </div>
             <!--Button to get the weather of user's current location-->
-                <div class="infoIcon" role="gridcell" tabindex="4" onclick="currentLocation()">
-                    <img class="socialMedia" src="./images/local.png" aria-label="Get local weather" onclick="currentLocation()"><p id="local"> Local Weather</p>
+                <div class="infoIcon" role="button" tabindex="4" onclick="currentLocation()">
+                    <img class="socialMedia" src="./images/local.png" aria-label="Get local weather. Page will reload." onclick="currentLocation()"><p id="local"> Local Weather</p>
                 </div>                  
             <!--Humidity percentage-->       
                 <div class="infoIcon" role="gridcell" tabindex="4">
