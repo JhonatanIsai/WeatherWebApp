@@ -1,6 +1,7 @@
 const size = "150";
 // API KEY 
 var key = 'f5a76bcde0f4fed7682b28cd60f2f9b1';
+fromStorage();
 //...... Date function.................................
 // Function sets the dates for the each day receiving as input
 // how many days we need to increase. 
@@ -50,12 +51,6 @@ function convertWindDir(deg) {
   let index = Math.round((deg % 360) / 22.5)
   return compass[index]
 }
-///............. Main divs in page....................
-
-//make sure its right div in array
-const todaydiv = document.getElementById("today");//Div with todays weather
-
-console.log(todaydiv);
 
 ///.........................................................
 function currentLocation(){
@@ -81,26 +76,33 @@ function currentLocation(){
 //.......................................................................
 var locationHistory = {
   //Information will be added when program runs
-  
+
 };
 
-//.............................................................................
-async function weatherID(cityID, pos = 0) {
-  //Fetch to get the weather data by altitude and longitude
-  
-  fetch("https://api.openweathermap.org/data/2.5/group?id="+cityID+"&appid="+key) 
-
-    .then(function (resp) { return resp.json() }) // Convert data to json
-    .then(function (data) {
-      console.log(data);
-      ///...................Today Main div.........
-      //Sets date for today
-      applyToHtml(data);
-    })
-    .catch(function () {
-      
-    });
+function toStorage(myObject){
+  localStorage.setItem("lastLocation",JSON.stringify(myObject));
 }
+
+function fromStorage(){
+  try{
+    const data = JSON.parse(localStorage.getItem("lastLocation"));
+    console.log(data.name + " was your last location.");
+    console.log(data);
+    applyToHtml(data);
+    const imgsun = document.getElementById("wicon");
+    imgsun.src = "./images/noInternet.jpg";
+    imgsun.width = size;
+    imgsun.height = size;
+  }
+  catch(error){
+    console.error("Items in memory are empty.");
+  }
+}
+
+
+//..............................Check Connection.........................
+
+//.............................................................................
 
 //.............................................................................
 async function weatherlocation(myLat,myLong, pos = 0) {
@@ -111,15 +113,14 @@ async function weatherlocation(myLat,myLong, pos = 0) {
     .then(function (resp) { return resp.json() }) // Convert data to json
     .then(function (data) {
       console.log(data);
-      ///...................Today Main div.........
-      //Sets date for today
+      
       applyToHtml(data);
     })
     .catch(function () {
-      
+      console.log("Connection failed, weather for pevious location displayed.");
+      fromStorage();
     });
 }
-
 //.........................................................................
 async function weatherZip(myZip, pos = 0) {
 // Fetch the weather data using a zipcode
@@ -128,18 +129,19 @@ async function weatherZip(myZip, pos = 0) {
 
     .then(function (resp) { return resp.json() }) // Convert data to json
     .then(function (data) {
-      console.log(data);
+
+      
       applyToHtml(data);
       ///...................Today Main div.........
     })
     .catch(function () {
       // catch any errors
-      //If the zipcode function fails we try the current location aproach
-      
+      console.log("Connection failed, weather for pevious location displayed.");
+      fromStorage();
     });
 }
-
 function applyToHtml(data){
+  toStorage(data);
   const temp = fahrenheit(data.main.temp) + "F°/" + celcius(data.main.temp) + "C°";
       const lowTemp = fahrenheit(data.main.temp_min) + "F°/" + celcius(data.main.temp_min) + "C°";
       const highTemp = fahrenheit(data.main.temp_max) + "F°/" + celcius(data.main.temp_max) + "C°"
@@ -184,7 +186,7 @@ function applyToHtml(data){
         "latitude":data.coord.lat,
         "country":data.sys.country
       };
-      console.log(locationHistory);
+
 
 }
 
@@ -199,7 +201,6 @@ function checkZipLength() {
   if (zip.length >= 5) {
     weatherZip(zip);
   }
-  console.log(zip);
 }
 
 //.....................................................................

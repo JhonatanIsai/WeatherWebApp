@@ -22,86 +22,81 @@
 
                 <a href="./index.html" aria-label="Link to home page">
                     <img src="./images/logo.png" class="logo">
-                    
                 </a>
                 <h1>MyWeather</h1>
             </div> 
-             
-    
-    
+
             <!--....................Menu ............................-->
             <nav class="dropdown">
-                <!-- <button onclick="myFunction()" class="dropbtn">Dropdown</button> -->
-               
+                <!--Drop Down Menu Button-->
                 <input type="image" src="./images/menu.png" onclick="myFunction()" class="dropbtn"> </input>
-
+                <!--Actual dropdown menu-->
                 <div id="myDropdown"  class="dropdown-content">
+                <!--Search Bar-->    
                     <input type="text" placeholder="Zip-Code" id="myInput" onkeyup="checkZipLength()" role="search" aria-label="Enter zip-Code">
-                    <a href="./logIn.html"><p>My profile</p></a>
-                    <a href="./signUp.html"><p>Sign up</p></a>
                 </div>
             </nav>
         </div>      
- <!--...........................Main Weather............................-->
-            
+ <!--...........................Weather Display............................-->
     <main>
+        <!--Container for main weather infromation -->
         <div class="container" role="main">
+        <!--Today's weather-->    
             <div id="today" role="section" tabindex="1" aria-label="Today's Weather"> 
-    
+        <!--Today's Date and other information-->
                 <div aria-label="Todays date"> <p id="Date"  tabindex="2">Today Date</p> </div>
+        <!--Description of the current weather-->        
                 <p id="Description" aria-label="Weather description" tabindex="2">Description</p>
+        <!--Name of city-->        
                 <p id="Location" aria-label="Current location" tabindex="2">Location</p>
+        <!--Current temperature-->        
                 <P id="Temp" aria-label="Current temperature" tabindex="2">Temp</P>
+        <!--Weather icon-->        
                 <img id="wicon">
             </div>
- <!--....................Icon Grid............................-->>
-            
-            <div  id="iconGrid" role="grid" tabindex="3" aria-label="Weather information pannel">
 
+ <!--....................Icon Grid............................-->>
+            <!--Section for weather information icons-->
+            <div  id="iconGrid" role="grid" tabindex="3" aria-label="Weather information pannel">
+            <!--Today's lowest temperature-->
                 <div class="infoIcon" role="gridcell" tabindex="4">
                     <img class="socialMedia" src="./images/lowTemp.png" aria-label="Highest temperature today"> <p id="lowTemp">Low Temp</p>
                 </div>
-        
+            <!--Today's highest tempretature-->
                 <div class="infoIcon" role="gridcell"  tabindex="4">
                     <img class="socialMedia" src="./images/highTemp.png" aria-label="Lowest temperature today"> <p id="highTemp">High Temp</p>
                 </div>
-        
-                <div class="infoIcon" role="gridcell" tabindex="4">
-                    
+            <!--Wind speed-->
+                <div class="infoIcon" role="gridcell" tabindex="4">        
                     <img class="socialMedia" src="./images/wind.png" aria-label="Wind Speed"> <p id="wind">Wind Speed MPH</p>
                 </div>
-        
-            
-
+            <!--Button to get the weather of user's current location-->
                 <div class="infoIcon" role="gridcell" tabindex="4" onclick="currentLocation()">
                     <img class="socialMedia" src="./images/local.png" aria-label="Get local weather" onclick="currentLocation()"><p id="local"> Local Weather</p>
                 </div>                  
-                
-        
+            <!--Humidity percentage-->       
                 <div class="infoIcon" role="gridcell" tabindex="4">
                     <img class="socialMedia" src="./images/humidity.png" aria-label="Humidity"><p id="humidity">Humidity %</p>
                 </div>
-        
+            <!--What the weather really feels like-->
                 <div class="infoIcon" role="gridcell" tabindex="4"> 
                     <img class="socialMedia" src="./images/feelsLike.png" aria-label="Weather feels like" ><p id="feelsLike">FeelsLike</p> 
                 </div>
-        
+            <!--Visibility-->
                 <div class="infoIcon" role="gridcell" tabindex="4"> 
                     <img class="socialMedia" src="./images/visibility.png" aria-label="Visibility"><p id="visibility">Visibility</p>
                 </div>
-        
+            <!--Time of sunrise-->
                 <div class="infoIcon" role="gridcell" tabindex="4"> 
                     <img class="socialMedia" src="./images/sunRise.png" aria-label="Time of sunrise"><p id="sunRise">Sunrise</p>
                 </div>
-        
+            <!--Time of sunset-->
                 <div class="infoIcon" role="gridcell" tabindex="4">
                     <img class="socialMedia" src="./images/sunSet.png" aria-label="Time of sunset"> <p id="sunSet">Sunset</p>
                 </div>
             </div>
         </div>
  <!--....................Social Media............................-->>
-            
-
     </main>
     <div aria-label="Social media">
         <a href="http://www.facebook.com" role="button"><img src="./images/Facebook.png" class="socialMedia" aria-label="Facebook button"></a>
@@ -111,11 +106,6 @@
         <a href="http://www.twitter.com" role="button"><img src="./images/Twitter.png" class="socialMedia" aria-label="Twitter button"></a> 
     </div>
     
-
-
-
-
-
     <script type="text/javascript" src="./main.js"></script>
 </body>
 
