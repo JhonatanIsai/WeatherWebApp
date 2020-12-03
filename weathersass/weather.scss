@@ -2,25 +2,24 @@ $infoFont : 200%;
 $tempFont : 300%;
 $iconBoxes: 100px;
 $bodyBackground:black;
-$todayBackground:#1759bb;//#3fff00;//#50D8D7;
+$todayBackground:#ABF8B2	;//#3fff00;//#50D8D7;
 $textColor:white;
-$infoIcon:#e2d300  ;
-$headerBackgroung:hsl(152, 100%, 44%) ;
-$menuButton:white;
-$linkButton:#e2c779;
+$infoIcon:#B66C3A;
+$headerBackgroung:#ABF0D1	;
+$menuButton:black;
+$linkButton:hsl(152, 100%, 44%);
 $menuImg:url("./images/menu.png");
-
-
 
 *{
     margin: 0;
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+//Title at the top
 h1{color: $textColor;}
-
+//Body 
 body{background-color: $bodyBackground }
-
+// Main block
 main{
     padding-top: 50px;
     .container{
@@ -28,16 +27,42 @@ main{
         padding-right: 6%;
         padding-bottom: 3%;
     }
-    background-color: black;
+    background-color:$bodyBackground;
 }
 
+//................. Top Header Area......................................
+// parent a area block containng the bav bar block 
 
-//..................................................................
-//.................Search Icon......................................
+#top{
+  background-color: $headerBackgroung;
+  padding-bottom: 0px;
+  border-radius: 0 10px 0;
+} 
+// Area at the top with title logo and search bar 
+.navbar{
+    width: 100%;
+    height: 120px;
+    padding-bottom: 100px;
+    display:flex;
+    padding-left: 2%;
+//Cloud logo
+    .logo{
+        width: 150px;
+        cursor: pointer;
+        margin: 30px 0px}
+//Smaall sandwich logo image
+    .menuimg{
+        width: 60px;
+        cursor: pointer;}
+} 
+#top{
+  background-color: $headerBackgroung;
+  padding-bottom: 0px;
+  border-radius: 0 10px 0;
+} 
 
-
-//....................................................................
-//....................................................................
+//...........................Main Weather area.........................................
+//Container for the main weather display
 .container{
     width: 100%;
     //min-width: 100vh;
@@ -45,75 +70,58 @@ main{
     padding-right: 1%;
     box-sizing: border-box;
     overflow:auto;
-
-}
-.navbar{
-    width: 100%;
-    height: 120px;
-    padding-bottom: 100px;
-    display:flex;
-    padding-left: 2%;
-
-    .logo{
-        width: 150px;
-        cursor: pointer;
-        margin: 30px 0px}
-
-    .menuimg{
-        width: 60px;
-        cursor: pointer;}
-}  
-
-#top{
-    background-color: $headerBackgroung;
-    padding-bottom: 0px;
-    border-radius: 0 10px 0;
-}
-
-.currentLocation{
-    width: 20px;
-    height: 20px;
 }
 
 #today{
-    text-align: center;
-    color:$textColor;
-    right: 50px;
-    background-color:$todayBackground;
-    font-size: $infoFont;
-    border-radius: 20px;
-    #Temp{
-        font-size:$tempFont;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-    a{padding-bottom: 20px;}    
+  text-align: center;
+  color:$textColor;
+  right: 50px;
+  background-color:$todayBackground;
+  font-size: $infoFont;
+  border-radius: 20px;
+  #Temp{
+    font-size:$tempFont;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  a{padding-bottom: 20px;}    
 }
 
+//.............Icon GRID ...............................................
+// Icon grid at bottonm of main div
 #iconGrid{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    overflow: visible;
-
-    .infoIcon{
-        width:$iconBoxes;
-        height: $iconBoxes;
-        text-align: center;
-        background-color: $infoIcon;
-        color: $textColor;
-        border-radius: 10px;
-        margin: 10px;
-        padding: 10px;    
-    }
-    .socialMedia{
-        opacity: .99;
-        padding-top: 0;
-        padding-left: 0;
-    }
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  overflow: visible;
+//Styling for individual Icon
+  .infoIcon{
+      width:$iconBoxes;
+      height: $iconBoxes;
+      text-align: center;
+      background-color: $infoIcon;
+      color: $textColor;
+      border-radius: 10px;
+      margin: 10px;
+      padding: 10px;    
+  }
+  //Picture inside the icon 
+  .socialMedia{
+      opacity: .99;
+      padding-top: 0;
+      padding-left: 0;
+  }
 }
+
+.currentLocation{
+  width: 20px;
+  height: 20px;
+}
+//...................Social Media Section...........................
+
+//Soicla media links at the botto of the page
 .socialMedia{ 
     padding-top: 100px;
     padding-left: 25px;
@@ -126,100 +134,86 @@ main{
 }
 //.......................................................
        /* Dropdown Button */
-
-       .dropbtn{
-           display: none;
-     }
-
+//Button for the dropdown 
+.dropbtn{
+  display: none;
+}
+//Search bar for the Zip codes
+#myInput {
+  box-sizing: border-box;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 35px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 7px;
+}
      
-     #myInput {
-       box-sizing: border-box;
-       background-position: 14px 12px;
-       background-repeat: no-repeat;
-       font-size: 16px;
-       padding: 14px 20px 12px 35px;
-       border: none;
-       border-bottom: 1px solid #ddd;
-       border-radius: 7px;
-       
-       
-     }
-     
-     #myInput:focus {outline: 3px solid #ddd;}
-     
-     .dropdown {
-       position: relative;
-       padding-right: 5px;
-       width: 100%;
-       height:120px;
-     }
+#myInput:focus {outline: 3px solid #ddd;}
+  //Block holding the items in the drop down content 
+.dropdown {
+  position: relative;
+  padding-right: 5px;
+  width: 100%;
+  height:120px;
+}
+//Menu items when contnet drops 
+.dropdown-content {
+  display: flex;
+  position: absolute;     
+  min-width: 230px;
+  overflow: auto;
+  z-index: 1;
+  bottom: 0;
+  right: 5px;
+}
 
-     .dropdown-content {
-       display: flex;
-       position: absolute;
-       //background-color:$linkButton;
-       min-width: 230px;
-       overflow: auto;
-       //border: 1px solid #ddd;
-       z-index: 1;
-       bottom: 0;
-       right: 5px;
-
-      }
+//..................................................................
+ //Text inside dropdown content    
+.dropdown-content a {
+  text-align: right;  
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
      
-     .dropdown-content a {
-       text-align: right;  
-       color: black;
-       padding: 12px 16px;
-       text-decoration: none;
-       display: block;
-       
-     }
-     
-     .dropdown a:hover {background-color: $linkButton;}
+.dropdown a:hover {background-color: $linkButton;}
 
-     #cloudBlock{
-      display: flex;
-  }
+//Holds the cloud logo
+#cloudBlock{
+  display: flex;
+}
 //.............................................................
-
-
 @media only screen and(max-width:480px){
-       /* Dropdown Button */
-       #cloudBlock{
-           display: flex;
-       }
-
-       
-       h1{
-           padding-top: 30px;
-           padding-left: 5%;
-        
-        }
-
-      
-
-   .dropbtn {
+//Block holding the 
+  #cloudBlock{
+    display: flex;
+  }
+//Title at top of screen
+  h1{
+    padding-top: 30px;
+    padding-left: 5%;     
+  }
+//Drop button for menu  
+  .dropbtn {
     position: absolute;
     display: block;
     right: 0;
     width: 50px;
     height: 50px;
- padding: 16px;
- font-size: 16px;
- border: none;
- cursor: pointer;
- 
-}
-   
-  
-  
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+//changes color when hoverig ove the button
   .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
     position: absolute;
-
   }
-
+//Seach bar for zipcode
   #myInput {
     box-sizing: border-box;
     background-position: 14px 12px;
@@ -232,14 +226,14 @@ main{
   }
   
   #myInput:focus {outline: 3px solid #ddd;}
-  
+//dropdown menu  
   .dropdown {
     position: relative;
     display: inline-block;
     width: 100%;    
     height: 210px;
   }
-  
+//Contnent of drop down menu
   .dropdown-content {
     display: none;
     position: absolute;
@@ -251,7 +245,7 @@ main{
     right: 0;
   
   }
-  
+//links for content of dropdown menu  
   .dropdown-content a {
     text-align: right;  
     color: black;
@@ -264,8 +258,8 @@ main{
   .dropdown a:hover {background-color:$headerBackgroung}
   .show {display: block;}
 
-
 //............Social media mobile..................
+//Makes the social media icons a little smaller for mobile use 
   .socialMedia{ 
     padding-top: 20px;
     padding-left: 10px;
